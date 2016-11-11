@@ -29,11 +29,15 @@ Other information (title, author etc) will be going this file as well.
 
 
 ### Compile a book
-Use "Build book" in `Build` of RStudio. If you choose gitbook format, it will create a book in HTML format under _book folder. After compiling a book, a viewer for selected format will be opened.
+Use "Build book" in `Build` of RStudio. If you choose gitbook format, it will create a book in HTML format under _book folder. After compiling a book, a viewer for selected format will be opened. 
+
+If you are working in an existing project and do not see the option of `Build`, go to "Project Options" and change the build tool to "Website". "Build book" should take care of everything:
+
+1. Build a html book
+2. Generate a pdf-book through LaTeX
+3. Generate a epub book
 
 In order to check the output in a browser, open `index.html` in the `_book` folder. In browser preview, you can use `edit` function which redirects to a source of Rmd on github. The idea is that other conributors of the book edit source and send a pull-request.
-
-
 
 ### Start a project from sratch
 
@@ -72,11 +76,13 @@ The code above creates following output
   c &= d
 \end{align}
 
+This seems working.
 
 ### Resources
 [More examples (e.g. shiny apps, widget)](https://bookdown.org/yihui/bookdown/components.html)
 
 [Video tutorials](https://www.rstudio.com/resources/webinars/introducing-bookdown/)
+
 
 
 

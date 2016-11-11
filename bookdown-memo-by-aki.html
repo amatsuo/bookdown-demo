@@ -39,8 +39,8 @@ MathJax.Hub.Config({
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="methods.html">
-<link rel="next" href="final-words.html">
+<link rel="prev" href="final-words.html">
+<link rel="next" href="references.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -152,15 +152,73 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="applications" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Applications</h1>
-<p>Some <em>significant</em> applications are demonstrated in this chapter.</p>
-<div id="example-one" class="section level2">
-<h2><span class="header-section-number">5.1</span> Example one</h2>
+<div id="bookdown-memo-by-aki" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Bookdown Memo (by Aki)</h1>
+<div id="install-bookdown" class="section level2">
+<h2><span class="header-section-number">7.1</span> install bookdown</h2>
+<pre><code>devtools::install_github(&quot;rstudio/bookdown&quot;)</code></pre>
 </div>
-<div id="example-two" class="section level2">
-<h2><span class="header-section-number">5.2</span> Example two</h2>
+<div id="working-with-a-demo" class="section level2">
+<h2><span class="header-section-number">7.2</span> working with a demo</h2>
+<p>Fork a <a href="https://github.com/amatsuo/bookdown-demo">demo-book</a></p>
+<p>Clone the repo. Rroj file works only with the Preview version of RStudio.</p>
+<div id="edit-index.rmd" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> Edit index.Rmd</h3>
+<p>Following two lines in index.Rmd determine the style of book</p>
+<pre><code>site: bookdown::bookdown_site
+output: bookdown::gitbook</code></pre>
+<p>Options for theme of the book is avaialble <a href="https://bookdown.org/yihui/bookdown/yaml-options.html">here</a></p>
+<p>Other information (title, author etc) will be going this file as well.</p>
+</div>
+<div id="compile-a-book" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> Compile a book</h3>
+<p>Use “Build book” in <code>Build</code> of RStudio. If you choose gitbook format, it will create a book in HTML format under _book folder. After compiling a book, a viewer for selected format will be opened.</p>
+<p>If you are working in an existing project and do not see the option of <code>Build</code>, go to “Project Options” and change the build tool to “Website”. “Build book” should take care of everything:</p>
+<ol style="list-style-type: decimal">
+<li>Build a html book</li>
+<li>Generate a pdf-book through LaTeX</li>
+<li>Generate a epub book</li>
+</ol>
+<p>In order to check the output in a browser, open <code>index.html</code> in the <code>_book</code> folder. In browser preview, you can use <code>edit</code> function which redirects to a source of Rmd on github. The idea is that other conributors of the book edit source and send a pull-request.</p>
+</div>
+<div id="start-a-project-from-sratch" class="section level3">
+<h3><span class="header-section-number">7.2.3</span> Start a project from sratch</h3>
+<p>Create a new project. Generate a new index.Rmd. The header should look like:</p>
+<pre><code>---
+title: &quot;Index&quot;
+author: &quot;Akitaka Matsuo&quot;
+date: &quot;24 October 2016&quot;
+output: bookdown::gitbook
+site: bookdown::bookdown_site
+---</code></pre>
+</div>
+<div id="adding-chapters" class="section level3">
+<h3><span class="header-section-number">7.2.4</span> Adding chapters</h3>
+<p>Add a new Rmd file (need to delete headers)</p>
+</div>
+<div id="referencing-figures-and-tables" class="section level3">
+<h3><span class="header-section-number">7.2.5</span> Referencing figures and tables</h3>
+<p><code>\@{fig:figname}</code> and <code>\@{tab:tablename}</code>. Fignames defined after the syntax highlighting methods in code-chunks, like <code>{r nice-fig</code>. Go Chater 1 to see working examples.</p>
+</div>
+<div id="align-equation" class="section level3">
+<h3><span class="header-section-number">7.2.6</span> Align equation</h3>
+<p>This syntax works:</p>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex">\begin{align}
+  a &amp;= b \\
+  c &amp;= d
+\end{align}</code></pre></div>
+The code above creates following output
+<span class="math display">\[\begin{align}
+  a &amp;= b \\
+  c &amp;= d
+\end{align}\]</span>
+</div>
+<div id="resources" class="section level3">
+<h3><span class="header-section-number">7.2.7</span> Resources</h3>
+<p><a href="https://bookdown.org/yihui/bookdown/components.html">More examples (e.g. shiny apps, widget)</a></p>
+<p><a href="https://www.rstudio.com/resources/webinars/introducing-bookdown/">Video tutorials</a></p>
 
+</div>
 </div>
 </div>
             </section>
@@ -168,8 +226,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="final-words.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="final-words.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
@@ -196,7 +254,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-application.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-Aki_memo.Rmd",
 "text": "Edit"
 },
 "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
